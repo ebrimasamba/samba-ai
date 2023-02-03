@@ -11,16 +11,24 @@ const Header = () => {
           <Link href={"/"} className="font-bold text-xl">
             <Image
               src={"/samba.svg"}
+              width={150}
+              height={100}
+              className="object-contain inline-block sm:hidden"
+              alt="site logo"
+            />
+
+            <Image
+              src={"/samba.svg"}
               width={160}
               height={100}
-              className="object-contain"
+              className="object-contain hidden sm:inline-block"
               alt="site logo"
             />
           </Link>
 
           <Link
             href={"/create"}
-            className="bg-primary text-white font-bold px-5 py-2.5 rounded-md text-sm uppercase"
+            className="bg-primary text-white font-bold px-3 sm:px-5 py-2.5 rounded-md text-sm uppercase"
           >
             Generate Image
           </Link>

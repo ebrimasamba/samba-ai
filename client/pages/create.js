@@ -104,7 +104,7 @@ export default function Create() {
                 </p>
               </div>
 
-              <form className="mt-16" onSubmit={handleSubmit}>
+              <form className="mt-10 sm:mt-16" onSubmit={handleSubmit}>
                 <div className="mb-5">
                   <FormField
                     id={"name"}
