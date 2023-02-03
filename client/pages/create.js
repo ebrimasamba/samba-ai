@@ -99,7 +99,7 @@ export default function Create() {
             <div className="max-w-xl">
               <div>
                 <h1 className="font-extrabold text-[#222328] text-[32px]">
-                  Create
+                  Generate Image
                 </h1>
                 <p className="mt-2 text-[#666e75] text-[14px] max-w-[500px]">
                   Generate an imaginative image through DALL-E AI and share it
@@ -107,7 +107,7 @@ export default function Create() {
                 </p>
               </div>
 
-              <form className="mt-10 sm:mt-16" onSubmit={handleSubmit}>
+              <form className="mt-10 " onSubmit={handleSubmit}>
                 <div className="mb-5">
                   <FormField
                     id={"name"}
