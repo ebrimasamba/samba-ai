@@ -6,7 +6,7 @@ dotenv.config();
 
 const router = express.Router();
 const configuration = new Configuration({
-  apiKey: "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",
+  apiKey: process.env.OPENAI_API_KEY,
 });
 
 router.route("/").post(async (req, res) => {

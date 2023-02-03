@@ -7,6 +7,7 @@ import axios from "axios";
 import Loader from "@/components/global/Loader";
 import { useRouter } from "next/router";
 import { surpriseMePrompts } from "@/constants";
+import Image from "next/image";
 
 export default function Create() {
   const [form, setForm] = useState({
@@ -30,11 +31,12 @@ export default function Create() {
   };
 
   const handleSubmit = async (e) => {
+    // console.log(process.env.NEXT_PUBLIC_API_BASE_URL);
     setgeneratingImg(true);
     e.preventDefault();
     try {
       const response = await axios.post(
-        `http://localhost:8080/api/v1/dalle`,
+        `${process.env.NEXT_PUBLIC_API_BASE_URL}/api/v1/dalle`,
         {
           prompt: form.prompt,
         },
@@ -62,7 +64,7 @@ export default function Create() {
       setIsSharing(true);
       try {
         const response = await axios.post(
-          `http://localhost:8080/api/v1/posts`,
+          `${process.env.NEXT_PUBLIC_API_BASE_URL}/api/v1/posts`,
           { ...form },
           {
             headers: {
@@ -130,17 +132,21 @@ export default function Create() {
 
                 <div className="relative bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 w-64 p-3 h-64 flex justify-center items-center mt-6">
                   {form.photo ? (
-                    <img
-                      src={form.photo}
+                    <Image
+                      src={form.photo || ""}
                       alt={form.prompt}
+                      fill
                       className="w-full h-full object-contain"
                     />
                   ) : (
-                    <img
-                      src={"/preview.png"}
-                      alt="preview"
-                      className="w-9/12 h-9/12 object-contain opacity-40"
-                    />
+                    <div className="w-[75%] h-[75%] relative">
+                      <Image
+                        src={"/preview.png"}
+                        alt="preview"
+                        fill
+                        className="object-contain opacity-40 "
+                      />
+                    </div>
                   )}
 
                   {generatingImg && (

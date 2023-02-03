@@ -3,11 +3,9 @@ import Layout from "@/components/global/Layout";
 import ImageCard from "@/components/ImageCard";
 import axios from "axios";
 import Head from "next/head";
-import Masonry from "react-masonry-css";
 
 export async function getServerSideProps(context) {
-  const { data } = await axios.get(`http://localhost:8080/api/v1/posts`);
-  console.log(data);
+  const { data } = await axios.get(`${process.env.API_BASE_URL}/api/v1/posts`);
 
   return {
     props: {
@@ -17,13 +15,6 @@ export async function getServerSideProps(context) {
 }
 
 export default function Home(props) {
-  const breakpointColumnsObj = {
-    default: 4,
-    1100: 3,
-    700: 2,
-    500: 1,
-  };
-
   return (
     <>
       <Head>
@@ -46,11 +37,6 @@ export default function Home(props) {
             </div>
 
             <div className="mt-16 grid grid-cols-3 gap-10">
-              {/* <Masonry
-                breakpointCols={3}
-                className="my-masonry-grid"
-                columnClassName="my-masonry-grid_column"
-              > */}
               {props.data.map((image) => (
                 <ImageCard
                   key={image._id}
@@ -58,10 +44,8 @@ export default function Home(props) {
                   name={image.name}
                   prompt={image.prompt}
                   photo={image.photo}
-                  // className="h-96"
                 />
               ))}
-              {/* </Masonry> */}
             </div>
           </Container>
         </section>
