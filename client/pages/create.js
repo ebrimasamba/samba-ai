@@ -99,7 +99,7 @@ export default function Create() {
             <div className="max-w-xl">
               <div>
                 <h1 className="font-extrabold text-[#222328] text-[32px]">
-                  Generate Image
+                  Generate image
                 </h1>
                 <p className="mt-2 text-[#666e75] text-[14px] max-w-[500px]">
                   Generate an imaginative image through DALL-E AI and share it
