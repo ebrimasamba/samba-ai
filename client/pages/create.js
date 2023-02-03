@@ -169,14 +169,22 @@ export default function Create() {
               {isSharing ? (
                 <button
                   disabled
-                  className="mt-3 text-white bg-[#6469ff] font-medium rounded-md text-sm w-full sm:w-auto px-5 py-2.5 text-center cursor-wait"
+                  className="mt-3 text-white bg-primary animate-pulse font-medium rounded-md text-sm w-full sm:w-auto px-5 py-2.5 text-center cursor-wait"
                 >
                   Sharing...
                 </button>
-              ) : (
+              ) : form.photo ? (
                 <button
                   onClick={handleShare}
-                  className="mt-3 text-white bg-[#6469ff] font-medium rounded-md text-sm w-full sm:w-auto px-5 py-2.5 text-center"
+                  className="mt-3 text-white bg-primary font-medium rounded-md text-sm w-full sm:w-auto px-5 py-2.5 text-center"
+                >
+                  Share with the Community
+                </button>
+              ) : (
+                <button
+                  disabled
+                  className="mt-3 text-white bg-gray-400 font-medium rounded-md text-sm w-full sm:w-auto px-5 py-2.5 text-center cursor-not-allowed"
+                  title="Generate a photo first"
                 >
                   Share with the Community
                 </button>
