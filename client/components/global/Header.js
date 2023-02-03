@@ -5,13 +5,13 @@ import Container from "./Container";
 
 const Header = () => {
   return (
-    <header className="py-5">
+    <header className="py-6">
       <Container className={""}>
         <div className="flex justify-between items-center">
           <Link href={"/"} className="font-bold text-xl">
             <Image
               src={"/samba.svg"}
-              width={150}
+              width={160}
               height={100}
               className="object-contain"
               alt="site logo"
