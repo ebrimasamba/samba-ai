@@ -6,13 +6,14 @@ import axios from "axios";
 import Head from "next/head";
 import { useState } from "react";
 
-export async function getServerSideProps(context) {
+export async function getStaticProps(context) {
   const { data } = await axios.get(`${process.env.API_BASE_URL}/api/v1/posts`);
 
   return {
     props: {
       data: data.data,
-    }, // will be passed to the page component as props
+    },
+    revalidate: 10,
   };
 }
 
