@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-
+import { twMerge } from "tailwind-merge";
+import { BsSearch } from "react-icons/bs";
 const FormField = ({
   label,
   id,
@@ -9,6 +10,7 @@ const FormField = ({
   handleSurpriseMe,
   handleChange,
   value,
+  className,
   type = "text",
 }) => {
   return (
@@ -28,16 +30,24 @@ const FormField = ({
           </button>
         ) : null}
       </div>
-      <input
-        type={type}
-        id={id}
-        name={name}
-        placeholder={placeholder}
-        className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#6469ff] focus:border-[#6469ff] outline-none block w-full p-3"
-        value={value}
-        onChange={handleChange}
-        required
-      />
+      <div className="relative">
+        <input
+          type={type}
+          id={id}
+          name={name}
+          placeholder={placeholder}
+          className={twMerge(
+            "bg-transparent border-b-2    border-gray-300  text-sm  focus:ring-0 focus:border-primary outline-none block w-full p-3 placeholder:text-gray-300",
+            className
+          )}
+          value={value}
+          onChange={handleChange}
+          required
+        />
+        <div className="absolute top-1/2 -translate-y-1/2 right-6">
+          <BsSearch className="text-white" />
+        </div>
+      </div>
     </div>
   );
 };

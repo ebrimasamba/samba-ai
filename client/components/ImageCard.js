@@ -7,7 +7,7 @@ const ImageCard = ({ _id, name, prompt, photo }) => (
       className="object-cover object-top"
       fill
       src={photo}
-      sizes={"1024px"}
+      // sizes={"1024px"}
       alt={prompt}
     />
 

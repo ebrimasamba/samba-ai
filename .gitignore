@@ -5,6 +5,7 @@ node_modules
 /.pnp
 .pnp.js
 
+
 # testing
 /coverage
 
@@ -31,3 +32,29 @@ yarn-error.log*
 
 # vercel
 .vercel
+
+
+# Ignore Node.js build and runtime directories
+node_modules/
+build/
+dist/
+
+# Ignore Next.js specific files and folders
+.next/
+out/
+.cache/
+.next.js/
+
+# Ignore Express specific files and folders
+server/node_modules/
+server/build/
+server/dist/
+
+# Ignore environment files
+.env
+.env.local
+
+# Ignore any logs or generated files
+*.log
+*.pid
+*.lock

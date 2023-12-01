@@ -3,7 +3,7 @@ import Container from "./Container";
 
 const Footer = () => {
   return (
-    <footer className="py-5 border-t">
+    <footer className="py-5 bg-gray-50">
       <Container className={"text-center text-gray-500 text-sm"}>
         {/* <span>&copy; Samba.ai {new Date().getFullYear()}</span> */}
 
@@ -12,7 +12,7 @@ const Footer = () => {
           <a
             href="https://sambadev.gm"
             target={"_blank"}
-            className="hover:underline hover:text-primary"
+            className="hover:underline text-primary font-bold"
             rel="noreferrer"
           >
             sambadev
